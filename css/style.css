@@ -8,3 +8,57 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+/* Skill Progress Bar Animation */
+@keyframes fillProgress {
+    from {
+        width: 0%;
+    }
+    to {
+        width: var(--progress-width);
+    }
+}
+
+/* Progress bar animation on page load */
+.skill-progress {
+    animation-fill-mode: forwards;
+}
+
+/* Skill card hover effect - icon scaling */
+.skill-card {
+    position: relative;
+}
+
+/* Smooth color transition for proficiency badges */
+.skill-card:hover {
+    filter: brightness(1.1);
+}
+
+/* Animation for skill cards entering */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-card {
+    animation: slideInUp 0.6s ease-out forwards;
+}
+
+.skill-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.skill-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.skill-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
