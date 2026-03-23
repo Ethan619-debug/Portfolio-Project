@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-gradient-to-br from-blue-950 via-slate-900 to-blue-950 text-white">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-black/40 backdrop-blur-lg border-b border-blue-500/20">
+        <nav class="flex justify-between items-center px-8 md:px-12 py-5">
+            <h1 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">MyPortfolio</h1>
+            <ul class="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
+                <li><a href="../index.html" class="text-slate-300 font-medium hover:text-blue-400 transition-colors">Home</a></li>
+                <li><a href="../index.html#about" class="text-slate-300 font-medium hover:text-blue-400 transition-colors">About</a></li>
+                <li><a href="projects.html" class="text-slate-300 font-medium hover:text-blue-400 transition-colors">Projects</a></li>
+                <li><a href="../index.html#contact" class="text-slate-300 font-medium hover:text-blue-400 transition-colors">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Projects Section -->
+    <section class="py-20 md:py-32 px-6 md:px-16">
+        <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center">My Projects</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- Project Card Template -->
+            <div class="bg-gradient-to-br from-slate-800/50 to-blue-950/50 backdrop-blur-lg p-6 md:p-8 rounded-xl border border-blue-500/20 hover:-translate-y-2 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/20 transition-all">
+                <h3 class="text-2xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Project 1</h3>
+                <p class="text-slate-400 mb-4">Detailed description of your first project goes here. Explain the challenges, solutions, and technologies used.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Tech Stack</span>
+                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Skills</span>
+                </div>
+                <a href="#" class="text-blue-400 hover:text-blue-300 font-semibold">View Project →</a>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-800/50 to-blue-950/50 backdrop-blur-lg p-6 md:p-8 rounded-xl border border-blue-500/20 hover:-translate-y-2 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/20 transition-all">
+                <h3 class="text-2xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Project 2</h3>
+                <p class="text-slate-400 mb-4">Detailed description of your second project goes here. Share what made it interesting and what you learned.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Tech Stack</span>
+                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Skills</span>
+                </div>
+                <a href="#" class="text-blue-400 hover:text-blue-300 font-semibold">View Project →</a>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-800/50 to-blue-950/50 backdrop-blur-lg p-6 md:p-8 rounded-xl border border-blue-500/20 hover:-translate-y-2 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/20 transition-all">
+                <h3 class="text-2xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Project 3</h3>
+                <p class="text-slate-400 mb-4">Detailed description of your third project goes here. Highlight the impact and outcomes of your work.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Tech Stack</span>
+                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Skills</span>
+                </div>
+                <a href="#" class="text-blue-400 hover:text-blue-300 font-semibold">View Project →</a>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-800/50 to-blue-950/50 backdrop-blur-lg p-6 md:p-8 rounded-xl border border-blue-500/20 hover:-translate-y-2 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/20 transition-all">
+                <h3 class="text-2xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Project 4</h3>
+                <p class="text-slate-400 mb-4">Detailed description of your fourth project goes here. Showcase your skills and accomplishments.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Tech Stack</span>
+                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Skills</span>
+                </div>
+                <a href="#" class="text-blue-400 hover:text-blue-300 font-semibold">View Project →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black/40 backdrop-blur-lg border-t border-blue-500/20 py-8 px-6 md:px-16 text-center text-slate-400 mt-12">
+        <p>© 2026 Elizar Nathaniel P. Lucas</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
