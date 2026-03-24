@@ -153,6 +153,26 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// Back to Top Button (Feature: Floating Navigation)
+const backToTopBtn = document.getElementById('back-to-top');
+
+// Show/hide back to top button on scroll
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+
+// Smooth scroll to top on click
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
 // Skeleton Loader - Image Loading Handler
 const projectImages = document.querySelectorAll('.project-image');
 
