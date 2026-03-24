@@ -31,8 +31,22 @@ if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', toggleTheme);
 }
 
-const savedTheme = localStorage.getItem('theme') || 'dark';
-applyTheme(savedTheme);
+// System Preference Detection (Feature 11)
+function detectSystemPreference() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        return savedTheme;
+    }
+    
+    // Check system preference
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        return 'light';
+    }
+    return 'dark';
+}
+
+const initialTheme = detectSystemPreference();
+applyTheme(initialTheme);
 
 // Intersection Observer for Scroll Animations
 const observerOptions = {
@@ -73,18 +87,70 @@ projectCards.forEach(card => {
         }
     });
 
-    // Card click handler
+    // Card click handler - Open Modal (Feature 6)
     card.addEventListener('click', (e) => {
-        const projectUrl = card.getAttribute('data-url');
         const projectTitle = card.getAttribute('data-title');
+        const projectTech = card.getAttribute('data-tech');
+        const projectUrl = card.getAttribute('data-url');
+        
+        // Populate modal with project data
+        document.getElementById('modal-title').textContent = projectTitle;
+        document.getElementById('modal-description').textContent = `Detailed information about ${projectTitle}. Click the GitHub or Live Demo link to view the project.`;
+        document.getElementById('modal-image').src = card.querySelector('.project-image').src;
+        
+        // Populate tech stack
+        const techStackDiv = document.getElementById('modal-tech');
+        techStackDiv.innerHTML = '';
+        projectTech.split(',').forEach(tech => {
+            const techTag = document.createElement('span');
+            techTag.className = 'bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm';
+            techTag.textContent = tech.trim();
+            techStackDiv.appendChild(techTag);
+        });
+        
+        // Set project links
+        const githubLink = document.getElementById('modal-github');
+        const demoLink = document.getElementById('modal-demo');
         
         if (projectUrl && projectUrl !== '#') {
-            window.location.href = projectUrl;
+            githubLink.href = projectUrl;
+            demoLink.href = projectUrl;
         } else {
-            console.log(`Clicked on: ${projectTitle}`);
-            // Can be extended to show a modal with project details
+            githubLink.style.opacity = '0.5';
+            demoLink.style.opacity = '0.5';
+        }
+        
+        // Show modal
+        document.getElementById('project-modal').classList.remove('hidden');
+    });
+});
+
+// Modal Controls (Feature 6)
+const projectModal = document.getElementById('project-modal');
+const closeModalBtn = document.getElementById('close-modal');
+const modalOverlay = document.querySelector('.modal-overlay');
+
+// Close modal when X button clicked
+if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => {
+        projectModal.classList.add('hidden');
+    });
+}
+
+// Close modal when clicking outside (on overlay)
+if (modalOverlay) {
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            projectModal.classList.add('hidden');
         }
     });
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !projectModal.classList.contains('hidden')) {
+        projectModal.classList.add('hidden');
+    }
 });
 
 // Skeleton Loader - Image Loading Handler

@@ -68,3 +68,8 @@ Portfolio/
 # Addables
 
 - src="https://your-domain.com/project-1-screenshot.jpg"
+
+- Update the project card data- attributes in HTML:
+- data-title="Your Project Name"
+- data-tech="React, Tailwind, Node.js"
+- data-url="https://github.com/yourrepo"

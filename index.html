@@ -234,13 +234,56 @@
             <a href="https://www.facebook.com/share/1BXupHHT9u/" target="_blank" rel="noopener noreferrer" class="social-link text-2xl text-slate-400 hover:text-blue-400 transition-colors duration-300" title="Facebook">
                 <i class="fab fa-facebook"></i>
             </a>
-            <a href="www.linkedin.com/in/t-g3r-undefined-598bb0337" target="_blank" rel="noopener noreferrer" class="social-link text-2xl text-slate-400 hover:text-blue-400 transition-colors duration-300" title="LinkedIn">
+            <a href="https://www.linkedin.com/in/t-g3r-undefined-598bb0337" target="_blank" rel="noopener noreferrer" class="social-link text-2xl text-slate-400 hover:text-blue-400 transition-colors duration-300" title="LinkedIn">
                 <i class="fab fa-linkedin"></i>
             </a>
         </div>
         
         <p class="text-xs text-slate-500">Connect with me on social media</p>
     </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4 modal-overlay">
+        <div class="bg-gradient-to-br from-slate-900 to-blue-950 rounded-xl border border-blue-500/30 max-w-2xl w-full shadow-2xl modal-content">
+            <div class="flex justify-between items-center p-6 border-b border-blue-500/20">
+                <h2 id="modal-title" class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Project Title</h2>
+                <button id="close-modal" class="text-slate-400 hover:text-blue-400 transition-colors text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 space-y-6">
+                <!-- Project Image -->
+                <div class="rounded-lg overflow-hidden h-64 bg-slate-800">
+                    <img id="modal-image" src="" alt="Project" class="w-full h-full object-cover">
+                </div>
+                
+                <!-- Project Description -->
+                <div>
+                    <h3 class="text-lg font-semibold text-blue-300 mb-2">Description</h3>
+                    <p id="modal-description" class="text-slate-400 leading-relaxed">Project description goes here.</p>
+                </div>
+                
+                <!-- Tech Stack -->
+                <div>
+                    <h3 class="text-lg font-semibold text-blue-300 mb-3">Tech Stack</h3>
+                    <div id="modal-tech" class="flex flex-wrap gap-2">
+                        <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm">Tech 1</span>
+                    </div>
+                </div>
+                
+                <!-- Project Links -->
+                <div class="flex gap-4">
+                    <a id="modal-github" href="#" target="_blank" class="flex-1 bg-slate-700/50 hover:bg-slate-700 text-slate-200 py-2 px-4 rounded-lg text-center transition-colors font-semibold">
+                        <i class="fab fa-github mr-2"></i>GitHub
+                    </a>
+                    <a id="modal-demo" href="#" target="_blank" class="flex-1 bg-blue-600/50 hover:bg-blue-600 text-white py-2 px-4 rounded-lg text-center transition-colors font-semibold">
+                        <i class="fas fa-globe mr-2"></i>Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
