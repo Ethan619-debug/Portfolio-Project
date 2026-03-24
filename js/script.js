@@ -5,12 +5,18 @@ function scrollToSection(id) {
 }
 
 const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const themeText = document.getElementById('theme-text');
 
 function applyTheme(theme) {
     document.body.classList.toggle('light-theme', theme === 'light');
     document.body.classList.toggle('dark-theme', theme === 'dark');
-    if (themeToggleBtn) {
-        themeToggleBtn.textContent = theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+    if (theme === 'light') {
+        themeIcon.className = 'fas fa-sun transition-transform duration-500 rotate-180 text-yellow-400';
+        themeText.textContent = 'Light Mode';
+    } else {
+        themeIcon.className = 'fas fa-moon transition-transform duration-500 text-slate-300';
+        themeText.textContent = 'Dark Mode';
     }
     localStorage.setItem('theme', theme);
 }
