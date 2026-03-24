@@ -86,3 +86,24 @@ projectCards.forEach(card => {
         }
     });
 });
+
+// Skeleton Loader - Image Loading Handler
+const projectImages = document.querySelectorAll('.project-image');
+
+projectImages.forEach(img => {
+    // Check if image is already cached and loaded
+    if (img.complete) {
+        img.classList.add('loaded');
+    }
+    
+    // Handle image load event
+    img.addEventListener('load', () => {
+        img.classList.add('loaded');
+    });
+    
+    // Handle image error
+    img.addEventListener('error', () => {
+        console.warn(`Failed to load image: ${img.src}`);
+        img.classList.add('loaded'); // Remove skeleton even on error
+    });
+});

@@ -63,5 +63,8 @@ Portfolio/
 - Create detailed project pages in `pages/projects.html`
 - Add a contact form
 - Integrate with a CMS
-- Add dark/light theme toggle
 - Portfolio filtering by category
+
+# Addables
+
+- src="https://your-domain.com/project-1-screenshot.jpg"
