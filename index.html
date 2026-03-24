@@ -15,14 +15,17 @@
 
     <!-- Navbar -->
     <header class="sticky top-0 z-50 bg-gradient-to-r from-slate-900/80 via-blue-950/80 to-slate-900/80 backdrop-blur-xl border-b border-blue-500/30 shadow-lg shadow-blue-500/10">
-        <nav class="flex justify-between items-center px-8 md:px-12 py-5">
+        <nav class="flex justify-between items-center px-6 md:px-12 py-5">
+            <!-- Logo -->
             <h1 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">MyPortfolio</h1>
-            <div class="flex items-center gap-4">
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-4">
                 <button id="theme-toggle" class="ripple px-4 py-2 rounded-lg bg-slate-800/50 text-slate-200 hover:bg-slate-700 transition-colors">
                     <i id="theme-icon" class="fas fa-moon transition-transform duration-500"></i>
                     <span id="theme-text">Dark Mode</span>
                 </button>
-                <ul class="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
+                <ul class="flex gap-8 items-center">
                     <li><a href="#home" class="text-slate-300 font-medium hover:text-blue-400 transition-colors">Home</a></li>
                     <li><a href="#about" class="text-slate-300 font-medium hover:text-blue-400 transition-colors">About</a></li>
                     <li><a href="#skills" class="text-slate-300 font-medium hover:text-blue-400 transition-colors">Skills</a></li>
@@ -30,7 +33,30 @@
                     <li><a href="#contact" class="text-slate-300 font-medium hover:text-blue-400 transition-colors">Contact</a></li>
                 </ul>
             </div>
+            
+            <!-- Mobile Menu Toggle & Theme Toggle -->
+            <div class="md:hidden flex items-center gap-3">
+                <button id="theme-toggle-mobile" class="ripple px-3 py-2 rounded-lg bg-slate-800/50 text-slate-200 hover:bg-slate-700 transition-colors">
+                    <i id="theme-icon-mobile" class="fas fa-moon transition-transform duration-500"></i>
+                </button>
+                <button id="mobile-menu-toggle" class="hamburger ripple p-2 rounded-lg bg-slate-800/50 hover:bg-slate-700 transition-colors group">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
         </nav>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-gradient-to-b from-slate-900/95 to-blue-950/95 border-t border-blue-500/20 backdrop-blur-xl">
+            <ul class="flex flex-col gap-4 px-6 py-6">
+                <li><a href="#home" class="mobile-nav-link text-slate-300 font-medium hover:text-blue-400 transition-colors block py-2">Home</a></li>
+                <li><a href="#about" class="mobile-nav-link text-slate-300 font-medium hover:text-blue-400 transition-colors block py-2">About</a></li>
+                <li><a href="#skills" class="mobile-nav-link text-slate-300 font-medium hover:text-blue-400 transition-colors block py-2">Skills</a></li>
+                <li><a href="#projects" class="mobile-nav-link text-slate-300 font-medium hover:text-blue-400 transition-colors block py-2">Projects</a></li>
+                <li><a href="#contact" class="mobile-nav-link text-slate-300 font-medium hover:text-blue-400 transition-colors block py-2">Contact</a></li>
+            </ul>
+        </div>
     </header>
 
     <!-- Hero Section -->

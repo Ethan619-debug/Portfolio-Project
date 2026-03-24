@@ -4,19 +4,32 @@ function scrollToSection(id) {
     });
 }
 
+// Theme Toggle - Desktop and Mobile
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 const themeText = document.getElementById('theme-text');
+const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+const themeIconMobile = document.getElementById('theme-icon-mobile');
 
 function applyTheme(theme) {
     document.body.classList.toggle('light-theme', theme === 'light');
     document.body.classList.toggle('dark-theme', theme === 'dark');
     if (theme === 'light') {
-        themeIcon.className = 'fas fa-sun transition-transform duration-500 rotate-180 text-yellow-400';
-        themeText.textContent = 'Light Mode';
+        if (themeIcon) {
+            themeIcon.className = 'fas fa-sun transition-transform duration-500 rotate-180 text-yellow-400';
+            themeText.textContent = 'Light Mode';
+        }
+        if (themeIconMobile) {
+            themeIconMobile.className = 'fas fa-sun transition-transform duration-500 text-yellow-400';
+        }
     } else {
-        themeIcon.className = 'fas fa-moon transition-transform duration-500 text-slate-300';
-        themeText.textContent = 'Dark Mode';
+        if (themeIcon) {
+            themeIcon.className = 'fas fa-moon transition-transform duration-500 text-slate-300';
+            themeText.textContent = 'Dark Mode';
+        }
+        if (themeIconMobile) {
+            themeIconMobile.className = 'fas fa-moon transition-transform duration-500 text-slate-300';
+        }
     }
     localStorage.setItem('theme', theme);
 }
@@ -29,6 +42,10 @@ function toggleTheme() {
 
 if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', toggleTheme);
+}
+
+if (themeToggleBtnMobile) {
+    themeToggleBtnMobile.addEventListener('click', toggleTheme);
 }
 
 // System Preference Detection (Feature 11)
@@ -47,6 +64,35 @@ function detectSystemPreference() {
 
 const initialTheme = detectSystemPreference();
 applyTheme(initialTheme);
+
+// Mobile Menu Toggle
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+// Toggle mobile menu
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', () => {
+        mobileMenuToggle.classList.toggle('active');
+        mobileMenu.classList.toggle('show');
+    });
+}
+
+// Close mobile menu when nav link clicked
+mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('show');
+    });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('header')) {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('show');
+    }
+});
 
 // Intersection Observer for Scroll Animations
 const observerOptions = {

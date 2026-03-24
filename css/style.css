@@ -102,6 +102,72 @@ body.light-theme .ripple::before {
     user-select: none;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 40px;
+    height: 40px;
+}
+
+.hamburger-line {
+    width: 24px;
+    height: 2.5px;
+    background-color: #cbdce1;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: rotate(-45deg) translateY(10px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: rotate(45deg) translateY(-10px);
+}
+
+/* Light mode hamburger */
+body.light-theme .hamburger-line {
+    background-color: #334155;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.mobile-menu.show {
+    max-height: 300px;
+}
+
+.mobile-nav-link {
+    border-left: 3px solid transparent;
+    padding-left: 9px;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    border-left-color: #3b82f6;
+}
+
+/* Light mode mobile nav */
+body.light-theme .mobile-nav-link {
+    color: #64748b !important;
+}
+
+body.light-theme .mobile-nav-link:hover {
+    color: #0284c7 !important;
+}
+
 /* Project Card Interactions */
 .project-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
