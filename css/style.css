@@ -63,6 +63,43 @@ button {
     font-weight: 600;
 }
 
+/* Project Card Interactions */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+/* Tech Tooltip */
+.tech-tooltip {
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    visibility: hidden;
+}
+
+.project-card:hover .tech-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* Light mode tooltip styling */
+body.light-theme .tech-tooltip {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+    border-color: rgba(148, 163, 184, 0.5) !important;
+}
+
+/* Dark mode tooltip styling */
+body.dark-theme .tech-tooltip {
+    background-color: #1e293b !important;
+    color: #e2e8f0 !important;
+    border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
 /* Smooth scroll behavior */
 html {
     scroll-behavior: smooth;

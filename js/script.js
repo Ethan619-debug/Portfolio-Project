@@ -53,3 +53,36 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
 });
+
+// Project Card Interactions
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach(card => {
+    // Tooltip show/hide on hover
+    card.addEventListener('mouseenter', () => {
+        const tooltip = card.querySelector('.tech-tooltip');
+        if (tooltip) {
+            tooltip.classList.remove('hidden');
+        }
+    });
+
+    card.addEventListener('mouseleave', () => {
+        const tooltip = card.querySelector('.tech-tooltip');
+        if (tooltip) {
+            tooltip.classList.add('hidden');
+        }
+    });
+
+    // Card click handler
+    card.addEventListener('click', (e) => {
+        const projectUrl = card.getAttribute('data-url');
+        const projectTitle = card.getAttribute('data-title');
+        
+        if (projectUrl && projectUrl !== '#') {
+            window.location.href = projectUrl;
+        } else {
+            console.log(`Clicked on: ${projectTitle}`);
+            // Can be extended to show a modal with project details
+        }
+    });
+});
