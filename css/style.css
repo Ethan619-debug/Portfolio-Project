@@ -54,6 +54,70 @@ html {
     animation-delay: 0.1s;
 }
 
+/* Light/Dark Theme Styling */
+body.light-theme {
+    background: linear-gradient(to bottom right, #f8fafc, #e2e8f0) !important;
+    color: #0f172a !important;
+}
+
+body.light-theme header,
+body.light-theme footer,
+body.light-theme .skill-card,
+body.light-theme section {
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    border-color: rgba(148, 163, 184, 0.5) !important;
+    color: #0f172a !important;
+}
+
+body.light-theme a,
+body.light-theme p,
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme span,
+body.light-theme li {
+    color: #1e293b !important;
+}
+
+body.light-theme .border-blue-500\/20,
+body.light-theme .border-blue-500\/50,
+body.light-theme .border-blue-500\/20,
+body.light-theme .bg-black\/40,
+body.light-theme .bg-slate-800\/50,
+body.light-theme .bg-blue-950\/50,
+body.light-theme .bg-slate-950,
+body.light-theme .bg-gradient-to-br,
+body.light-theme .bg-gradient-to-r {
+    background: rgba(255, 255, 255, 0.75) !important;
+    background-image: none !important;
+}
+
+body.dark-theme {
+    background: linear-gradient(to bottom right, #020617, #0f172a, #020617) !important;
+    color: #ffffff !important;
+}
+
+body.dark-theme header,
+body.dark-theme footer,
+body.dark-theme .skill-card,
+body.dark-theme section {
+    background-color: rgba(0, 0, 0, 0.35) !important;
+    border-color: rgba(59, 130, 246, 0.2) !important;
+    color: #e2e8f0 !important;
+}
+
+body.dark-theme a,
+body.dark-theme p,
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme span,
+body.dark-theme li {
+    color: #e2e8f0 !important;
+}
+
 .skill-card:nth-child(2) {
     animation-delay: 0.2s;
 }
