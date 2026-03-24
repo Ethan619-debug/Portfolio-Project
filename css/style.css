@@ -283,8 +283,27 @@ section.animate-on-scroll {
     animation-fill-mode: forwards;
 }
 
-/* Gradient Shift Animation */
-@keyframes gradientShift {
+/* Section Dividers */
+.section-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #3b82f6, #8b5cf6, transparent);
+    margin: 3rem 0;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.section-divider:hover {
+    opacity: 1;
+}
+
+body.light-theme .section-divider {
+    background: linear-gradient(90deg, transparent, #0284c7, #7c3aed, transparent) !important;
+    opacity: 0.4;
+}
+
+body.light-theme .section-divider:hover {
+    opacity: 0.8;
+}
     0%, 100% {
         background-position: 0% 0%;
     }
