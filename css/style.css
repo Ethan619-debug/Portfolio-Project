@@ -3,11 +3,81 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: background 0.5s ease, color 0.5s ease;
+    line-height: 1.6;
+}
+
+/* Heading Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+h1 {
+    font-size: clamp(1.875rem, 4vw, 3.75rem);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: clamp(1.875rem, 3vw, 3rem);
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+}
+
+h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+    line-height: 1.3;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.125rem;
+    line-height: 1.35;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+/* Body Text */
+p {
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+}
+
+/* Section Spacing & Readability */
+section {
+    margin-bottom: 1rem;
+}
+
+li {
+    line-height: 1.6;
+}
+
+/* Button Typography */
+button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
 /* Smooth scroll behavior */
 html {
     scroll-behavior: smooth;
+}
+
+/* Scroll Animation - Fade In and Slide Up */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Skill Progress Bar Animation */
@@ -18,6 +88,12 @@ html {
     to {
         width: var(--progress-width);
     }
+}
+
+/* Apply fade-in slide-up animation */
+section.animate-on-scroll {
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    opacity: 0;
 }
 
 /* Progress bar animation on page load */
