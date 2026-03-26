@@ -554,11 +554,19 @@ body.light-theme li {
 
 /* Exception: h1 with gradient should stay transparent */
 body.light-theme h1 {
-    color: #0f172a;
+    color: #000 !important;
+    background: none !important;
+    -webkit-text-fill-color: #000 !important;
+    -webkit-background-clip: border !important;
+    background-clip: border-box !important;
 }
 
 body.light-theme h1.bg-gradient-to-r {
-    color: transparent !important;
+    color: #000 !important;
+    background: none !important;
+    -webkit-text-fill-color: #000 !important;
+    -webkit-background-clip: border !important;
+    background-clip: border-box !important;
 }
 
 body.light-theme .text-slate-400,
@@ -655,10 +663,11 @@ body.light-theme p.text-xs.text-right {
 /* Light mode gradient text styling - only for h1/h2 with gradient */
 body.light-theme h1.bg-gradient-to-r,
 body.light-theme h2.bg-gradient-to-r {
-    background: linear-gradient(to right, #0284c7, #4f46e5) !important;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent !important;
+    background: none !important;
+    color: #000 !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: #000 !important;
 }
 
 /* Light mode buttons */
